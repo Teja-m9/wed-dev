@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing:border-box;
+            font-family: "open-sans";
+        }
+    
+        .back{
+            background: url("https://i.gifer.com/79S2.gif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            height:100vh;
+            width:100%;
+            
+            
+        }
+        header{
+            width:100%;
+            position:fixed;
+            top:0;
+            left:0;
+            z-index: 10;
+            padding: 0 10px;
+        
+        }
+        .navbar{
+            display: flex;
+            padding: 22px 0;
+            align-items: center;
+            max-width: 1200px;
+            margin:0 auto;
+            justify-content: space-between;
+
+        }
+        .navbar .logo1{
+            display: none;
+            color:rgb(12, 243, 243);
+            cursor:pointer;
+            font-size: 1.5rem;
+        }
+        .navbar .logo{
+            gap:10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .navbar .logo img{
+            width:40px;
+            border-radius: 100%;
+        }
+        .navbar .logo h2{
+            color:crimson;
+            font-weight: 600;
+            font-size: 1.7rem;
+            text-align:center;
+
+        }
+        .navbar .links{
+            display: flex;
+            gap:35px;
+            list-style: none;
+            align-items: center;
+        }
+        .navbar .logo2{
+            position: absolute;
+            right:20px;
+            top:20px;
+            display: none;
+            color:rgb(140, 160, 95);
+            cursor: pointer;
+        }
+        .navbar .links a{
+            color:blue;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.1s ease;
+        }
+        .navbar .links a:hover{
+            background-color: yellow;
+        }
+        section{
+            padding: 100px 200px;
+        }
+        .home{
+            position: relative;
+            width:100%;
+            min-height: 100vh;
+            display:flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .home .A{
+            z-index: 888;
+            color:#000;
+            width:70%;
+            margin-top: 50px;
+
+        }
+        .home .A h1{
+            font-size: 4em;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            line-height: 75px;
+            margin-bottom: 40px;
+        }
+        .home .A h1 span{
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        .home .A p{
+            margin-bottom: 65px;
+        }
+        .home .A a{
+            background: goldenrod;
+            padding: 15px 35px;
+            color:white;
+            font-size: 1.1em;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .container{
+            height:70vh;
+            padding-left: 150px;
+            padding-top: 50px;
+            padding-right: 50px;
+            display: flex;
+        }
+        .card{
+            display:flex;
+            align-items: center;
+            width:75vw;
+            max-width: 650px;
+            padding:50px 30px 50px 20px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding-top: 40px;
+            padding-right: 100px;
+        }
+        .container:hover .card{
+            filter:blur(20px);
+            transform:scale(.9);
+            opacity: .5;
+        }
+        .container .card:hover{
+            filter:blur(0);
+            transform:scale(1);
+            opacity: 1;
+        }
+        .container .card:hover .content{
+            clip-path: circle(600px);
+        }
+        .container .card:hover .content a{
+            box-shadow: 1px 1px 2px rgba(0,0,0,.2), -1px -1px 2px rgba(255,255,255,.4);
+        }
+        .container:hover .card1{
+            filter:blur(20px);
+            transform:scale(.9);
+            opacity: .5;
+        }
+        .container .card1:hover{
+            filter:blur(0);
+            transform:scale(1);
+            opacity: 1;
+        }
+        .container .card1:hover .content1{
+            clip-path: circle(600px);
+        }
+        .container .card1:hover .content1 a{
+            box-shadow: 1px 1px 2px rgba(0,0,0,.2), -1px -1px 2px rgba(255,255,255,.4);
+        }
+        .container:hover .card2{
+            filter:blur(20px);
+            transform:scale(.9);
+            opacity: .5;
+        }
+        .container .card2:hover{
+            filter:blur(0);
+            transform:scale(1);
+            opacity: 1;
+        }
+        .container .card2:hover .content2{
+            clip-path: circle(600px);
+        }
+        .container .card2:hover .content2 a{
+            box-shadow: 1px 1px 2px rgba(0,0,0,.2), -1px -1px 2px rgba(255,255,255,.4);
+        }
+        .container0:hover .card0{
+            filter:blur(20px);
+            transform:scale(.9);
+            opacity: .5;
+        }
+        .container0 .card0:hover{
+            filter:blur(0);
+            transform:scale(1);
+            opacity: 1;
+        }
+        .container0 .card0:hover .content0{
+            clip-path: circle(600px);
+        }
+        .container0 .card0:hover .content0 a{
+            box-shadow: 1px 1px 2px rgba(0,0,0,.2), -1px -1px 2px rgba(255,255,255,.4);
+        }
+        .container0:hover .card4{
+            filter:blur(20px);
+            transform:scale(.9);
+            opacity: .5;
+        }
+        .container0 .card4:hover{
+            filter:blur(0);
+            transform:scale(1);
+            opacity: 1;
+        }
+        .container0 .card4:hover .content4{
+            clip-path: circle(600px);
+        }
+        .container0 .card4:hover .content4 a{
+            box-shadow: 1px 1px 2px rgba(0,0,0,.2), -1px -1px 2px rgba(255,255,255,.4);
+        }
+        .card img{
+            max-width: 280px;
+            width: 28vw;
+            height: 300px;
+            object-fit: cover;
+            margin-left: -60px;
+            margin-right: 30px;
+            border-radius: inherit;
+            box-shadow: 0 60px 40px skyblue;
+        }
+        .card h2{
+            color:rgb(0 0 0/ 90%);
+        }
+        .card p{
+            color:rgb(0 0 0 / 70%);
+        }
+        .card button{
+            border:0;
+            background: #5448de;
+            color:#f8f8f8;
+            font-family: inherit;
+            padding:16px 26px;
+            font-size: 16px;
+            border-radius: 16px;
+        }
+        @media (width<=740px){
+            .card{
+                flex-direction: column;
+                text-align: center;
+                margin: 0 40px;
+                padding-left: 50px;
+                padding-right: 50px;
+                width:100%;
+            }
+            .card img{
+                margin: -100px 0 30px 0;
+                width:100%;
+                max-width: 1000px;
+            }
+        }
+        .card1{
+            display:flex;
+            align-items: center;
+            width:75vw;
+            max-width: 650px;
+            padding:50px 30px 50px 20px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding-top: 40px;
+            padding-right: 100px;
+        }
+        .card1 img{
+            max-width: 280px;
+            width: 28vw;
+            height: 300px;
+            object-fit: cover;
+            margin-left: -60px;
+            margin-right: 30px;
+            border-radius: inherit;
+            box-shadow: 0 60px 40px skyblue;
+        }
+        .card1 h2{
+            color:rgb(0 0 0/ 90%);
+        }
+        .card1 p{
+            color:rgb(0 0 0 / 70%);
+        }
+        .card1 button{
+            border:0;
+            background: #5448de;
+            color:#f8f8f8;
+            font-family: inherit;
+            padding:16px 26px;
+            font-size: 16px;
+            border-radius: 16px;
+        }
+        @media (width<=740px){
+            .card1{
+                flex-direction: column;
+                text-align: center;
+                margin: 0 40px;
+                padding-left: 50px;
+                padding-right: 50px;
+                width:100%;
+            }
+            .card1 img{
+                margin: -100px 0 30px 0;
+                width:100%;
+                max-width: 1000px;
+            }
+        }
+        .card2{
+            display:flex;
+            align-items: center;
+            width:75vw;
+            max-width: 650px;
+            padding:50px 30px 50px 20px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding-top: 40px;
+            padding-right: 100px;
+        }
+        .card2 img{
+            max-width: 280px;
+            width: 28vw;
+            height: 300px;
+            object-fit: cover;
+            margin-left: -60px;
+            margin-right: 30px;
+            border-radius: inherit;
+            box-shadow: 0 60px 40px skyblue;
+        }
+        .card2 h2{
+            color:rgb(0 0 0/ 90%);
+        }
+        .card2 p{
+            color:rgb(0 0 0 / 70%);
+        }
+        .card2 button{
+            border:0;
+            background: #5448de;
+            color:#f8f8f8;
+            font-family: inherit;
+            padding:16px 26px;
+            font-size: 16px;
+            border-radius: 16px;
+        }
+        @media (width<=740px){
+            .card2{
+                flex-direction: column;
+                text-align: center;
+                margin: 0 40px;
+                padding-left: 50px;
+                padding-right: 50px;
+                width:100%;
+            }
+            .card2 img{
+                margin: -100px 0 30px 0;
+                width:100%;
+                max-width: 1000px;
+            }
+        }
+        h3{
+            font-size: 70px;
+            font-weight: 900;
+            font-family: monospace;
+            color:crimson;
+            text-align: center;
+            padding-top: 100px;
+            padding-left: 100px;
+           
+            
+        }
+        .container0{
+            height:70vh;
+            width:70%;
+            padding-left: 150px;
+            padding-right: 50px;
+            display: flex;
+        }
+        .card0{
+            display:flex;
+            align-items: center;
+            width:75vw;
+            max-width: 650px;
+            padding:50px 30px 50px 20px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding-top: 40px;
+            padding-right: 100px;
+        }
+        .card0 img{
+            max-width: 280px;
+            width: 28vw;
+            height: 300px;
+            object-fit: cover;
+            margin-left: -60px;
+            margin-right: 30px;
+            border-radius: inherit;
+            box-shadow: 0 60px 40px skyblue;
+        }
+        .card0 h2{
+            color:rgb(0 0 0/ 90%);
+        }
+        .card0 p{
+            color:rgb(0 0 0 / 70%);
+        }
+        .card0 button{
+            border:0;
+            background: #5448de;
+            color:#f8f8f8;
+            font-family: inherit;
+            padding:16px 26px;
+            font-size: 16px;
+            border-radius: 16px;
+        }
+        @media (width<=740px){
+            .card0{
+                flex-direction: column;
+                text-align: center;
+                margin: 0 40px;
+                padding-left: 50px;
+                padding-right: 50px;
+                width:100%;
+            }
+            .card0 img{
+                margin: -100px 0 30px 0;
+                width:100%;
+                max-width: 1000px;
+            }
+        }
+        .card4{
+            display:flex;
+            align-items: center;
+            width:75vw;
+            max-width: 650px;
+            padding:50px 30px 50px 20px;
+            background: #ffffff;
+            border-radius: 24px;
+            padding-top: 40px;
+            padding-right: 100px;
+        }
+        .card4 img{
+            max-width: 280px;
+            width: 28vw;
+            height: 300px;
+            object-fit: cover;
+            margin-left: -60px;
+            margin-right: 30px;
+            border-radius: inherit;
+            box-shadow: 0 60px 40px skyblue;
+        }
+        .card4 h2{
+            color:rgb(0 0 0/ 90%);
+        }
+        .card4 p{
+            color:rgb(0 0 0 / 70%);
+        }
+        .card4 button{
+            border:0;
+            background: #5448de;
+            color:#f8f8f8;
+            font-family: inherit;
+            padding:16px 26px;
+            font-size: 16px;
+            border-radius: 16px;
+        }
+        @media (width<=740px){
+            .card4{
+                flex-direction: column;
+                text-align: center;
+                margin: 0 40px;
+                padding-left: 50px;
+                padding-right: 50px;
+                width:100%;
+            }
+            .card4 img{
+                margin: -100px 0 30px 0;
+                width:100%;
+                max-width: 1000px;
+            }
+        }
+        .container .card .content1 a{
+            color:green;
+            font-size: 1em;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: lightsalmon;
+        }
+        .container .card1 .content2 a{
+            color:green;
+            font-size: 1em;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: lightsalmon;
+        }
+        .container .card2 .content3 a{
+            color:green;
+            font-size: 1em;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: lightsalmon;
+        }
+        .container0 .card0 .content0 a{
+            color:green;
+            font-size: 1em;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: lightsalmon;
+        }
+        .container0 .card4 .content4 a{
+            color:green;
+            font-size: 1em;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            background-color: lightsalmon;
+        }
+        .footer{
+            background-color: #24262b;
+            padding: 70px 0;
+        }
+        .row{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .col{
+            max-width: 1170px;
+            margin: auto;
+
+        }
+        ul{
+            list-style: none;
+
+        }
+        .footer-col{
+            width:25%;
+            padding:0 15px;
+        }
+        .footer-col h4{
+            font-size: 18px;
+            color:#ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+
+        }
+        .footer-col h4:before{
+            content:'';
+            position: absolute;
+            left:0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width:50px;
+
+        }
+        .footer-col ul li:not(:last-child){
+            margin-bottom: 10px;
+
+        }
+        .footer-col ul li a{
+
+            font-size: 16px;
+            text-transform: capitalize;
+            color:#ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color:#bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        .footer-col ul li a:hover{
+            color: #ffffff;
+            padding-left: 8px;
+        }
+        .footer-col .social a{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255,255,255,0.2);
+            margin:0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;  
+            transition: all 0.5s ease;
+
+        }
+        .footer-col .social a:hover{
+            color:#24262b;
+            background-color: #ffffff;
+        }
+        @media(max-width: 767px){
+            .footer-col{
+                width:50%;
+                margin-bottom: 30px;
+
+            }
+        }
+        @media(max-width: 574px){
+            .footer-col{
+                width:100%;
+
+            }
+        }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="back">
+    <header>
+        <nav class="navbar">
+            <span class="logo1">menu</span>
+            <a href="#" class="logo">
+                <img src="https://sdg.swu.ac.th/images/sdg/SDG%207%20icon.png" alt="logo">
+                <h2>Affordable and Clean Energy</h2>
+            </a>
+            <ul class="links">
+                <span class="logo2">close</span>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Energy Production</a></li>
+                <li><a href="#">Equipment</a></li>
+                <li><a href="#">Data Storage</a></li>
+                <li><a href="#">Cost Analysis</a></li>
+                <li><a href="#">Environmental impact</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <section class="home">
+    <div class="A">
+        <h1>Wonderful.<br><span>Energy</span></h1>
+        <p>A nation that can't control its energy sources can't control its future.<p>
+        <a href="https://www.unep.org/explore-topics/sustainable-development-goals/why-do-sustainable-development-goals-matter/goal-7">Read More</a>
+    </div>
+    </section>
+    </div>
+    <h3>RENEWABLE ENERGY RESOURCES</h3>
+    <div class="container">
+        <div class="card">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/173/135/large_2x/vector-solar-cell-illustration-concept.jpg" alt="solar energy">
+            <div class="content1">
+                <h2>SOLAR ENERGY</h2>
+                <p>Solar energy is defined as the transformation of energy that is present in the sun and is one of the renewable energies.</p>
+            <a href="https://education.nationalgeographic.org/resource/solar-energy/">Read More</a>
+            </div>
+        </div>
+        <div class="card1">
+            <img src="http://clipartmag.com/images/wind-mill-clipart-21.jpg" alt="wind energy">
+            <div class="content2">
+                <h2>WIND ENERGY</h2>
+                <p>Scientists and engineers are using energy from the wind to generate electricity. Wind energy, or wind power, is created using a wind turbine.</p>
+            <a href="https://education.nationalgeographic.org/resource/wind-energy/">Read More</a>
+            </div>
+        </div>
+        <div class="card2">
+            <img src="https://static.vecteezy.com/system/resources/previews/004/596/379/original/hydroelectric-station-plant-water-dam-reservoir-illustration-cartoon-vector.jpg" alt="hydro">
+            <div class="content3">
+                <h2>HYDROENERGY</h2>
+                <p>Hydroelectric energy is a form of renewable energy that uses the power of moving water to generate electricity.</p>
+            <a href="https://education.nationalgeographic.org/resource/hydroelectric-energy/">Read More</a>
+            </div>
+        </div>
+
+            
+    </div>
+    <div class="container0">
+        <div class="card0">
+            <img src="https://www.ernstheating.com/wp-content/uploads/2018/01/Ernst-geothermal-heating.jpg" alt="geothermal energy">
+            <div class="content0">
+                <h2>GeoThermal Energy</h2>
+                <p>Coming from the heat of the Earth’s core, geothermal energy can be used to generate electricity in geothermal power plants or to heat homes and provide hot water via geothermal heating.</p>
+            <a href="https://education.nationalgeographic.org/resource/geothermal-energy/">Read More</a>
+            </div>
+        </div>
+        <div class="card4">
+            <img src="https://impactful.ninja/wp-content/uploads/2021/08/Biomass-Energy.png" alt="Biomass energy">
+            <div class="content4">
+                <h2>Biomass Energy</h2>
+                <p>The Earth continuously produces geothermal energy through the gradual decay of radioactive matter located in its core. This is a natural process that occurs in all rocks. 
+
+                    .</p>
+            <a href="https://education.nationalgeographic.org/resource/biomass-energy/">Read More</a>
+            </div>
+        </div>
+       
+
+            
+    </div>
+    
+    <footer class="footer">
+        <div class="col">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Energizing the future</a></li>
+                        <li><a href="#">Switch to clean Energy</a></li>
+                        <li><a href="#">Preserve the planet</a></li>
+                        <li><a href="#">Save Nature</a></li>
+                    </ul>
+                </div>
+               
+                <div class="footer-col">
+                    <h4>FOLLOW US</h4>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/s_i_v_a_r_a_m_teja?igsh=MXNpc2lxYWs2ang1Nw=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ramteja-mamidisetty-717b6725a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+
+    
+   
+
+</body>
+</html>
