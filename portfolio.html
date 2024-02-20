@@ -2,69 +2,132 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chakri-portfolio</title>
-    <link rel="stylesheet" href="port.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <script src="https://kit.fontawesome.com/5eb2c51ffb.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="port1.css" />
 </head>
 
 <body>
-    <header>
-        <h1> Chakri Kottana</h1>
-        <p>Web Weveloper and Designer</p>
-    </header>
-    <div class="header1">
-        <img src="chak.jpg" alt="" width="300px" width="500px" style="float:right;">
-        <h2>About Myself</h2>
-        <h1>CHAKRI KOTTANA</h1>
-        <div class="role">Student</div><br>
-        <address class="phone">Phone : +91-7997526708</address><br>
-        <address>E-Mail: <a href="kottanachakri06@gmail.com" target="_blank">kottanachakri06@gmail.com</a>
-        </address><br>
-        <p>A passionate wed developer with expertise in HTML,CSS. Experienced in creating responsive and user-friendly
-            websites</p>
+    <nav id="navbar" class="nav">
+        <ul>
+            <li>
+                <a href="#welcome-section">About</a>
+            </li>
+            <li>
+                <a href="#projects">Work</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
 
-        </p>
-        <span class="icon"><i class="fa-solid fa-house"></i></span>
-        <p class="home">Address: Visakhapatnam,village:peda gangavaram 531040
-        </p>
-    </div>
-    <section id="skills">
-        <h2>SKILLS</h2>
+
+    <!-- Second Section-->
+   
+    <section id="welcome-section">
+        <h1>Hey I'm Teja</h1>
+        <p><i>a front-end web developer</i></p>
+        <br>
+        <img src="https://cdn.glitch.global/0f5f817a-a6a6-4cf1-a32b-42a7708a2fbe/teja1.jpg?v=1708454310572" alt="Profile Photo" class="profile-photo">
+    </section>
+
+    <section id="skills" class="skills-section">
+        <h2>Skills</h2>
         <ul>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
         </ul>
     </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-1">
-            <h3>GDSC</h3>
-            <img src="doc.jpg" height="70px">
-            <p>I've successfully earned a certification in Sustainable Development Goals(SDG).</p>
+    
+
+   
+
+    <section id="projects" class="project-section">
+        <h2 class="projects-section-header">My Project's</h2>
+
+        <div class="projects-grid">
+            <a href="http://127.0.0.1:5500/ak.html" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://undergrad.cs.umd.edu/sites/undergrad.cs.umd.edu/files/GDSC_Logo_White_Background_0.png" alt="project" />
+                <p class="project-title">
+
+                    GDSC SDG-3
+
+                </p>
+            </a>
+
+            <a href="https://web.telegram.org/a/#6805603289" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://centribal.com/wp-content/uploads/2021/03/post-ventajas-chatbot-telegram.png"
+                    alt="project" />
+                <p class="project-title">
+
+                    SearchTerm Image Generator
+
+                </p>
+            </a>
+
+            <a href="http://127.0.0.1:5500/sdg.html" target="_blank" class="project project-tile">
+                <img class="project-image"
+                    src="https://seranking.com/es/blog/wp-content/uploads/sites/13/2020/04/Landing-page.png" alt="project" />
+                <p class="project-title">
+
+                    Landing Page
+
+                </p>
+            </a>
+
+           
+
+        </div>
+</section>
+
+<section id="resume" class="resume-section">
+    <h2>Resume</h2>
+    <a id="resume-download" href="http://127.0.0.1:5500/Resume1.html" download>Download Resume</a>
+</section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-section-header">
+            <h2 id="con">Let's work together...</h2>
+            <p>How do you take your coffee?</p>
+        </div>
+        <div class="form">
+            <form id="form" action="mailto:example@example.com/email-submit">
+                <input type="email" id="email" placeholder="Your Email Address" name="email" required /><br>
+                <a href="#" target="_blank" id="submit" class="btn contact-submit"><i class="fas fa-arrow-right"></i></a
+                    </form>
+        </div>
+        <div class="contact-links">
+            <a href="#" target="_blank" class="btn contact-details"><i class="fab fa-instagram"></i></a>
+            <a id="profile-link" href="https://github.com/lazy4gyan" target="_blank" class="btn contact-details"><i
+                    class="fab fa-github"></i></a>
+            <a href="#" target="_blank" class="btn contact-details"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="btn contact-details"><i class="fas fa-mobile-alt"></i></a>
         </div>
     </section>
-    <section id="resume">
-        <h2>Resume</h2>
-        <a id="downloadLink" href="res.pdf" download>
-            <button id="downloadButton">⬇</button>
-        </a>
-        <p class="downloadButton">Click to Download</p>
-    </section>
+
+    <!-- END CONTACT SECTION -->
+
+    <!-- START FOOTER SECTION -->
+
     <footer>
-        <a href="https://www.linkedin.com/in/chakri-kottana-57a57725a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            target="_blank">
-            <img src="linkedIn.png" alt="linkedIn" width="50px" height="50px">
-        </a>
-        <a href="https://www.instagram.com/the_chakrii?igsh=NTc4MTIwNjQ2YQ==" target="_blank">
-            <img src="insta.jpg" alt="Insta" width="50px" height="50px">
-        </a>
-        <a href="https://www.facebook.com/chakri.kottana.52?mibextid=rS40aB7S9Ucbxw6v" target="_blank">
-            <img src="facebook.jpg" alt="facebook" width="50px" height="50px">
-        </a>
-        &copy; 2024 kottana Chakri.All rights reserved
+        <p id="foot">
+            &copy; 2024, Made with ❤ by
+            <a id="fot" href="https://www.linkedin.com/in/ramteja-mamidisetty-717b6725a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Siva Rama Teja
+            </a>
+        </p>
     </footer>
+
+    <!-- END FOOTER SECTION -->
+
 </body>
 
 </html>
